@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <zabbix_export>
     <version>4.4</version>
-    <date>2019-12-09T17:43:25Z</date>
+    <date>2019-12-09T21:17:18Z</date>
     <groups>
         <group>
             <name>Templates/Applications</name>
@@ -22,6 +22,26 @@
                 </application>
             </applications>
             <items>
+                <item>
+                    <name>UrBackup-Server package upgradeable</name>
+                    <key>urbackup-server.package.is-upgradeable</key>
+                    <delay>1h</delay>
+                    <history>7d</history>
+                    <trends>0</trends>
+                    <applications>
+                        <application>
+                            <name>UrBackup-Server</name>
+                        </application>
+                    </applications>
+                    <triggers>
+                        <trigger>
+                            <expression>{last()}&gt;0</expression>
+                            <name>UrBackup-Server package is outdated</name>
+                            <priority>INFO</priority>
+                            <manual_close>YES</manual_close>
+                        </trigger>
+                    </triggers>
+                </item>
                 <item>
                     <name>UrBackup-Server service active</name>
                     <key>urbackup-server.service.is-active</key>
