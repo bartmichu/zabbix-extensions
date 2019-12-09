@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <zabbix_export>
     <version>4.4</version>
-    <date>2019-12-08T21:19:48Z</date>
+    <date>2019-12-09T17:43:25Z</date>
     <groups>
         <group>
             <name>Templates/Applications</name>
@@ -24,7 +24,7 @@
             <items>
                 <item>
                     <name>UrBackup-Server service active</name>
-                    <key>urbackup-server.is-active</key>
+                    <key>urbackup-server.service.is-active</key>
                     <history>7d</history>
                     <trends>30d</trends>
                     <applications>
@@ -51,7 +51,7 @@
                 </item>
                 <item>
                     <name>UrBackup-Server service enabled</name>
-                    <key>urbackup-server.is-enabled</key>
+                    <key>urbackup-server.service.is-enabled</key>
                     <delay>1h</delay>
                     <history>7d</history>
                     <trends>30d</trends>
@@ -70,7 +70,7 @@
                 </item>
                 <item>
                     <name>UrBackup-Server service failed</name>
-                    <key>urbackup-server.is-failed</key>
+                    <key>urbackup-server.service.is-failed</key>
                     <history>7d</history>
                     <trends>30d</trends>
                     <applications>
