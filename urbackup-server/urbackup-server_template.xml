@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <zabbix_export>
     <version>4.4</version>
-    <date>2019-12-09T21:17:18Z</date>
+    <date>2019-12-10T20:58:24Z</date>
     <groups>
         <group>
             <name>Templates/Applications</name>
@@ -25,7 +25,7 @@
                 <item>
                     <name>UrBackup-Server package upgradeable</name>
                     <key>urbackup-server.package.is-upgradeable</key>
-                    <delay>1h</delay>
+                    <delay>60m</delay>
                     <history>7d</history>
                     <trends>0</trends>
                     <applications>
@@ -57,14 +57,8 @@
                     </valuemap>
                     <triggers>
                         <trigger>
-                            <expression>{count(#10)}=0</expression>
+                            <expression>{count(10m)}=0</expression>
                             <name>UrBackup-Server service is down</name>
-                            <priority>HIGH</priority>
-                        </trigger>
-                        <trigger>
-                            <expression>{last()}=0</expression>
-                            <name>UrBackup-Server service is down</name>
-                            <status>DISABLED</status>
                             <priority>HIGH</priority>
                         </trigger>
                     </triggers>
@@ -72,7 +66,7 @@
                 <item>
                     <name>UrBackup-Server service enabled</name>
                     <key>urbackup-server.service.is-enabled</key>
-                    <delay>1h</delay>
+                    <delay>10m</delay>
                     <history>7d</history>
                     <trends>30d</trends>
                     <applications>
