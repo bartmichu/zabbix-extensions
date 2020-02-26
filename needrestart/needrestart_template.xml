@@ -1,0 +1,100 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<zabbix_export>
+    <version>4.4</version>
+    <date>2020-02-26T19:27:46Z</date>
+    <groups>
+        <group>
+            <name>Templates</name>
+        </group>
+    </groups>
+    <templates>
+        <template>
+            <template>Template App needrestart</template>
+            <name>Template App needrestart</name>
+            <description>Check if any service needs to be restarted after library upgrades and detect obsolete kernel.</description>
+            <groups>
+                <group>
+                    <name>Templates</name>
+                </group>
+            </groups>
+            <applications>
+                <application>
+                    <name>needrestart</name>
+                </application>
+            </applications>
+            <items>
+                <item>
+                    <name>Needrestart - Kernel</name>
+                    <key>needrestart.kernel</key>
+                    <delay>10m</delay>
+                    <history>7d</history>
+                    <trends>30d</trends>
+                    <applications>
+                        <application>
+                            <name>needrestart</name>
+                        </application>
+                    </applications>
+                    <triggers>
+                        <trigger>
+                            <expression>{last()}=2</expression>
+                            <name>Obsolete kernel - ABI compatible upgrade pending</name>
+                            <priority>INFO</priority>
+                            <manual_close>YES</manual_close>
+                        </trigger>
+                        <trigger>
+                            <expression>{last()}=0</expression>
+                            <name>Obsolete kernel - unknown or failed to detect</name>
+                            <priority>INFO</priority>
+                            <manual_close>YES</manual_close>
+                        </trigger>
+                        <trigger>
+                            <expression>{last()}=3</expression>
+                            <name>Obsolete kernel - version upgrade pending</name>
+                            <priority>INFO</priority>
+                            <manual_close>YES</manual_close>
+                        </trigger>
+                    </triggers>
+                </item>
+                <item>
+                    <name>Needrestart - Libraries</name>
+                    <key>needrestart.libs</key>
+                    <delay>10m</delay>
+                    <history>7d</history>
+                    <trends>30d</trends>
+                    <applications>
+                        <application>
+                            <name>needrestart</name>
+                        </application>
+                    </applications>
+                    <triggers>
+                        <trigger>
+                            <expression>{last()}&gt;0</expression>
+                            <name>Some services need to be restarted</name>
+                            <priority>INFO</priority>
+                            <manual_close>YES</manual_close>
+                        </trigger>
+                    </triggers>
+                </item>
+                <item>
+                    <name>Needrestart - Processes</name>
+                    <key>needrestart.pids</key>
+                    <delay>10m</delay>
+                    <history>7d</history>
+                    <trends>30d</trends>
+                    <applications>
+                        <application>
+                            <name>needrestart</name>
+                        </application>
+                    </applications>
+                    <triggers>
+                        <trigger>
+                            <expression>{last()}&gt;0</expression>
+                            <name>Some processes need to be restarted</name>
+                            <priority>INFO</priority>
+                        </trigger>
+                    </triggers>
+                </item>
+            </items>
+        </template>
+    </templates>
+</zabbix_export>
