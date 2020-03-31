@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <zabbix_export>
     <version>4.4</version>
-    <date>2020-02-26T19:25:46Z</date>
+    <date>2020-03-31T10:17:00Z</date>
     <groups>
         <group>
             <name>Templates/Applications</name>
@@ -78,7 +78,7 @@
                         <trigger>
                             <expression>{last()}=0</expression>
                             <name>UrBackup Server service is disabled</name>
-                            <priority>AVERAGE</priority>
+                            <priority>WARNING</priority>
                             <manual_close>YES</manual_close>
                         </trigger>
                     </triggers>

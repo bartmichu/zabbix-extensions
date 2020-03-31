@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <zabbix_export>
     <version>4.4</version>
-    <date>2020-02-26T19:27:09Z</date>
+    <date>2020-03-31T10:13:40Z</date>
     <groups>
         <group>
             <name>Templates</name>
@@ -26,7 +26,7 @@
                     <triggers>
                         <trigger>
                             <expression>{last()}&gt;0</expression>
-                            <name>Package updates pending</name>
+                            <name>Package updates are pending</name>
                             <priority>INFO</priority>
                             <manual_close>YES</manual_close>
                         </trigger>
@@ -41,7 +41,7 @@
                     <triggers>
                         <trigger>
                             <expression>{last()}&gt;0</expression>
-                            <name>Security updates pending</name>
+                            <name>Security updates are pending</name>
                             <priority>WARNING</priority>
                             <manual_close>YES</manual_close>
                         </trigger>
