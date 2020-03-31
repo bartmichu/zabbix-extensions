@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<zabbix_export>
+    <version>4.4</version>
+    <date>2020-03-31T10:07:05Z</date>
+    <groups>
+        <group>
+            <name>Templates</name>
+        </group>
+    </groups>
+    <templates>
+        <template>
+            <template>Template Ubuntu reboot-required</template>
+            <name>Template Ubuntu reboot-required</name>
+            <groups>
+                <group>
+                    <name>Templates</name>
+                </group>
+            </groups>
+            <items>
+                <item>
+                    <name>Reboot required</name>
+                    <key>ubuntu-reboot-required</key>
+                    <delay>10m</delay>
+                    <history>7d</history>
+                    <trends>30d</trends>
+                    <triggers>
+                        <trigger>
+                            <expression>{last()}&lt;&gt;0</expression>
+                            <name>System reboot is required</name>
+                            <priority>INFO</priority>
+                            <description>A system reboot from a previous update or installation is pending.</description>
+                            <manual_close>YES</manual_close>
+                        </trigger>
+                    </triggers>
+                </item>
+            </items>
+        </template>
+    </templates>
+</zabbix_export>
