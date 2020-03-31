@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<zabbix_export>
+    <version>4.4</version>
+    <date>2020-03-31T10:49:53Z</date>
+    <groups>
+        <group>
+            <name>Templates</name>
+        </group>
+    </groups>
+    <templates>
+        <template>
+            <template>Template ZFS checks</template>
+            <name>Template ZFS checks</name>
+            <groups>
+                <group>
+                    <name>Templates</name>
+                </group>
+            </groups>
+            <items>
+                <item>
+                    <name>ZFS pool capacity</name>
+                    <key>zfs-checks.pool.capacity</key>
+                    <history>7d</history>
+                    <trends>30d</trends>
+                    <triggers>
+                        <trigger>
+                            <expression>{last()}&gt;0</expression>
+                            <name>High percentage of ZFS pool space used (more than 80%)</name>
+                            <priority>INFO</priority>
+                            <manual_close>YES</manual_close>
+                        </trigger>
+                    </triggers>
+                </item>
+                <item>
+                    <name>ZFS pool health</name>
+                    <key>zfs-checks.pool.health</key>
+                    <history>7d</history>
+                    <trends>30d</trends>
+                    <triggers>
+                        <trigger>
+                            <expression>{last()}&lt;&gt;0</expression>
+                            <name>ZFS pool health is other than 'ONLINE'</name>
+                            <priority>HIGH</priority>
+                        </trigger>
+                    </triggers>
+                </item>
+            </items>
+        </template>
+    </templates>
+</zabbix_export>
