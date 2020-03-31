@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <zabbix_export>
     <version>4.4</version>
-    <date>2020-02-26T19:27:46Z</date>
+    <date>2020-03-31T10:55:40Z</date>
     <groups>
         <group>
             <name>Templates</name>
@@ -37,7 +37,7 @@
                     <triggers>
                         <trigger>
                             <expression>{last()}=2</expression>
-                            <name>Obsolete kernel - ABI compatible upgrade pending</name>
+                            <name>Obsolete kernel - ABI compatible upgrade is pending</name>
                             <priority>INFO</priority>
                             <manual_close>YES</manual_close>
                         </trigger>
@@ -49,7 +49,7 @@
                         </trigger>
                         <trigger>
                             <expression>{last()}=3</expression>
-                            <name>Obsolete kernel - version upgrade pending</name>
+                            <name>Obsolete kernel - version upgrade is pending</name>
                             <priority>INFO</priority>
                             <manual_close>YES</manual_close>
                         </trigger>
@@ -69,7 +69,7 @@
                     <triggers>
                         <trigger>
                             <expression>{last()}&gt;0</expression>
-                            <name>Some services need to be restarted</name>
+                            <name>One or more services need to be restarted</name>
                             <priority>INFO</priority>
                             <manual_close>YES</manual_close>
                         </trigger>
@@ -89,8 +89,9 @@
                     <triggers>
                         <trigger>
                             <expression>{last()}&gt;0</expression>
-                            <name>Some processes need to be restarted</name>
+                            <name>One or more processes need to be restarted</name>
                             <priority>INFO</priority>
+                            <manual_close>YES</manual_close>
                         </trigger>
                     </triggers>
                 </item>
