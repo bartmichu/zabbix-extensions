@@ -1,5 +1,6 @@
 # Place this file in /etc/sudoers.d/ directory.
 # All files in this directory should be mode 0440.
+#
 
 Defaults:zabbix !requiretty
 Cmnd_Alias NEEDRESTART_LIBS = /usr/sbin/needrestart -b -r l -l
