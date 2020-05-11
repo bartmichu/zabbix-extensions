@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <zabbix_export>
     <version>4.4</version>
-    <date>2020-03-31T10:17:00Z</date>
+    <date>2020-05-11T20:07:23Z</date>
     <groups>
         <group>
             <name>Templates/Applications</name>
@@ -57,7 +57,7 @@
                     </valuemap>
                     <triggers>
                         <trigger>
-                            <expression>{count(10m)}=0</expression>
+                            <expression>{last()}=0</expression>
                             <name>UrBackup Server service is down</name>
                             <priority>HIGH</priority>
                         </trigger>
