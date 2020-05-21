@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <zabbix_export>
     <version>4.4</version>
-    <date>2020-03-31T10:49:53Z</date>
+    <date>2020-05-21T19:47:18Z</date>
     <groups>
         <group>
             <name>Templates</name>
@@ -39,8 +39,9 @@
                     <triggers>
                         <trigger>
                             <expression>{last()}&lt;&gt;0</expression>
-                            <name>ZFS pool health is other than 'ONLINE'</name>
+                            <name>ZFS pool state is not 'ONLINE'</name>
                             <priority>HIGH</priority>
+                            <manual_close>YES</manual_close>
                         </trigger>
                     </triggers>
                 </item>
