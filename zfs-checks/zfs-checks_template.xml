@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <zabbix_export>
-    <version>4.4</version>
-    <date>2020-05-21T19:47:18Z</date>
+    <version>5.0</version>
+    <date>2020-06-25T06:57:19Z</date>
     <groups>
         <group>
             <name>Templates</name>
@@ -9,8 +9,8 @@
     </groups>
     <templates>
         <template>
-            <template>Template ZFS checks</template>
-            <name>Template ZFS checks</name>
+            <template>Template ZFS checks by user parameters</template>
+            <name>Template ZFS checks by user parameters</name>
             <groups>
                 <group>
                     <name>Templates</name>

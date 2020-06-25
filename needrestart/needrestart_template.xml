@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <zabbix_export>
-    <version>4.4</version>
-    <date>2020-03-31T10:55:40Z</date>
+    <version>5.0</version>
+    <date>2020-06-25T06:27:49Z</date>
     <groups>
         <group>
             <name>Templates</name>
@@ -9,9 +9,9 @@
     </groups>
     <templates>
         <template>
-            <template>Template App needrestart</template>
-            <name>Template App needrestart</name>
-            <description>Check if any service needs to be restarted after library upgrades and detect obsolete kernel.</description>
+            <template>Template App needrestart by user parameters</template>
+            <name>Template App needrestart by user parameters</name>
+            <description>Check if any service needs to be restarted (after library upgrades) and detect obsolete kernel.</description>
             <groups>
                 <group>
                     <name>Templates</name>

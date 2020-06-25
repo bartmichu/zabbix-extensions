@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <zabbix_export>
-    <version>4.4</version>
-    <date>2020-03-31T10:13:40Z</date>
+    <version>5.0</version>
+    <date>2020-06-25T06:39:16Z</date>
     <groups>
         <group>
             <name>Templates</name>
@@ -9,8 +9,9 @@
     </groups>
     <templates>
         <template>
-            <template>Template Ubuntu updates</template>
-            <name>Template Ubuntu updates</name>
+            <template>Template Ubuntu updates by user parameters</template>
+            <name>Template Ubuntu updates by user parameters</name>
+            <description>Check the number of pending updates.</description>
             <groups>
                 <group>
                     <name>Templates</name>
