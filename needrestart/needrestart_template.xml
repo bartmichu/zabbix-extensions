@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <zabbix_export>
     <version>5.0</version>
-    <date>2020-06-25T06:27:49Z</date>
+    <date>2020-08-28T20:17:06Z</date>
     <groups>
         <group>
             <name>Templates</name>
@@ -11,7 +11,7 @@
         <template>
             <template>Template App needrestart by user parameters</template>
             <name>Template App needrestart by user parameters</name>
-            <description>Check if any service needs to be restarted (after library upgrades) and detect obsolete kernel.</description>
+            <description>Use needrestart to check if services need to be restarted and to detect obsolete kernel.</description>
             <groups>
                 <group>
                     <name>Templates</name>
@@ -27,8 +27,8 @@
                     <name>Needrestart - Kernel</name>
                     <key>needrestart.kernel</key>
                     <delay>10m</delay>
-                    <history>7d</history>
-                    <trends>30d</trends>
+                    <history>14d</history>
+                    <trends>60d</trends>
                     <applications>
                         <application>
                             <name>needrestart</name>
@@ -36,21 +36,24 @@
                     </applications>
                     <triggers>
                         <trigger>
-                            <expression>{last()}=2</expression>
-                            <name>Obsolete kernel - ABI compatible upgrade is pending</name>
+                            <expression>{last()}=3</expression>
+                            <name>Kernel upgrade is pending</name>
                             <priority>INFO</priority>
+                            <description>Needrestart detected that a kernel upgrade is pending.</description>
                             <manual_close>YES</manual_close>
                         </trigger>
                         <trigger>
                             <expression>{last()}=0</expression>
-                            <name>Obsolete kernel - unknown or failed to detect</name>
+                            <name>Obsolete kernel check: status unknown or failed to detect</name>
                             <priority>INFO</priority>
+                            <description>There is a problem with obsolete kernel check by needrestart: kernel status is unknown or failed to detect.</description>
                             <manual_close>YES</manual_close>
                         </trigger>
                         <trigger>
-                            <expression>{last()}=3</expression>
-                            <name>Obsolete kernel - version upgrade is pending</name>
+                            <expression>{last()}=2</expression>
+                            <name>System reboot is required: pending kernel upgrade</name>
                             <priority>INFO</priority>
+                            <description>Needrestart detected that system reboot is required to load a new kernel. There is an ABI compatible kernel upgrade pending.</description>
                             <manual_close>YES</manual_close>
                         </trigger>
                     </triggers>
@@ -59,8 +62,8 @@
                     <name>Needrestart - Libraries</name>
                     <key>needrestart.libs</key>
                     <delay>10m</delay>
-                    <history>7d</history>
-                    <trends>30d</trends>
+                    <history>14d</history>
+                    <trends>60d</trends>
                     <applications>
                         <application>
                             <name>needrestart</name>
@@ -69,8 +72,9 @@
                     <triggers>
                         <trigger>
                             <expression>{last()}&gt;0</expression>
-                            <name>One or more services need to be restarted</name>
+                            <name>Some services should be restarted</name>
                             <priority>INFO</priority>
+                            <description>Needrestart detected that some services are using old versions of upgraded libraries (after library upgrades) and should be restarted.</description>
                             <manual_close>YES</manual_close>
                         </trigger>
                     </triggers>
@@ -79,8 +83,8 @@
                     <name>Needrestart - Processes</name>
                     <key>needrestart.pids</key>
                     <delay>10m</delay>
-                    <history>7d</history>
-                    <trends>30d</trends>
+                    <history>14d</history>
+                    <trends>60d</trends>
                     <applications>
                         <application>
                             <name>needrestart</name>
@@ -89,8 +93,9 @@
                     <triggers>
                         <trigger>
                             <expression>{last()}&gt;0</expression>
-                            <name>One or more processes need to be restarted</name>
+                            <name>Some processes should be restarted</name>
                             <priority>INFO</priority>
+                            <description>Needrestart detected that some processes are using old versions of upgraded files (after package upgrades) and should be restarted.</description>
                             <manual_close>YES</manual_close>
                         </trigger>
                     </triggers>
