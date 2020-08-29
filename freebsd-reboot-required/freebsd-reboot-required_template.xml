@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<zabbix_export>
+    <version>5.0</version>
+    <date>2020-08-29T20:05:20Z</date>
+    <groups>
+        <group>
+            <name>Templates</name>
+        </group>
+    </groups>
+    <templates>
+        <template>
+            <template>Template FreeBSD reboot-required by user parameters</template>
+            <name>Template FreeBSD reboot-required by user parameters</name>
+            <description>Check if system reboot is required.</description>
+            <groups>
+                <group>
+                    <name>Templates</name>
+                </group>
+            </groups>
+            <items>
+                <item>
+                    <name>Reboot required</name>
+                    <key>freebsd-reboot-required</key>
+                    <delay>10m</delay>
+                    <history>14d</history>
+                    <trends>0</trends>
+                    <value_type>TEXT</value_type>
+                    <triggers>
+                        <trigger>
+                            <expression>{last()}=&quot;true&quot;</expression>
+                            <name>System reboot is required</name>
+                            <priority>INFO</priority>
+                            <description>A system reboot from a previous update or installation is pending.</description>
+                            <manual_close>YES</manual_close>
+                        </trigger>
+                    </triggers>
+                </item>
+            </items>
+        </template>
+    </templates>
+</zabbix_export>
