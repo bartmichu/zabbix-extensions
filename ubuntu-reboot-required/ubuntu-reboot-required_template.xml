@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <zabbix_export>
     <version>5.0</version>
-    <date>2020-06-25T06:34:47Z</date>
+    <date>2020-08-29T20:00:56Z</date>
     <groups>
         <group>
             <name>Templates</name>
@@ -11,7 +11,7 @@
         <template>
             <template>Template Ubuntu reboot-required by user parameters</template>
             <name>Template Ubuntu reboot-required by user parameters</name>
-            <description>Check is system reboot is required.</description>
+            <description>Check if system reboot is required.</description>
             <groups>
                 <group>
                     <name>Templates</name>
@@ -22,8 +22,8 @@
                     <name>Reboot required</name>
                     <key>ubuntu-reboot-required</key>
                     <delay>10m</delay>
-                    <history>7d</history>
-                    <trends>30d</trends>
+                    <history>14d</history>
+                    <trends>60d</trends>
                     <triggers>
                         <trigger>
                             <expression>{last()}&lt;&gt;0</expression>
