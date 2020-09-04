@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <zabbix_export>
     <version>5.0</version>
-    <date>2020-08-29T20:05:20Z</date>
+    <date>2020-09-04T18:49:22Z</date>
     <groups>
         <group>
             <name>Templates</name>
@@ -30,7 +30,7 @@
                             <expression>{last()}=&quot;true&quot;</expression>
                             <name>System reboot is required</name>
                             <priority>INFO</priority>
-                            <description>A system reboot from a previous update or installation is pending.</description>
+                            <description>A system reboot is required by security or errata update.</description>
                             <manual_close>YES</manual_close>
                         </trigger>
                     </triggers>

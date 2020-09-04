@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <zabbix_export>
     <version>5.0</version>
-    <date>2020-08-29T20:00:56Z</date>
+    <date>2020-09-04T19:09:57Z</date>
     <groups>
         <group>
             <name>Templates</name>
@@ -29,7 +29,7 @@
                             <expression>{last()}&lt;&gt;0</expression>
                             <name>System reboot is required</name>
                             <priority>INFO</priority>
-                            <description>A system reboot from a previous update or installation is pending.</description>
+                            <description>System reboot is required to load a new kernel.</description>
                             <manual_close>YES</manual_close>
                         </trigger>
                     </triggers>
