@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <zabbix_export>
     <version>5.0</version>
-    <date>2020-08-28T20:17:06Z</date>
+    <date>2020-09-04T07:33:08Z</date>
     <groups>
         <group>
             <name>Templates</name>
@@ -36,10 +36,10 @@
                     </applications>
                     <triggers>
                         <trigger>
-                            <expression>{last()}=3</expression>
-                            <name>Kernel upgrade is pending</name>
+                            <expression>{last()}=2</expression>
+                            <name>Kernel upgrade pending (ABI compatible).</name>
                             <priority>INFO</priority>
-                            <description>Needrestart detected that a kernel upgrade is pending.</description>
+                            <description>Needrestart detected that there is an ABI compatible kernel upgrade pending.</description>
                             <manual_close>YES</manual_close>
                         </trigger>
                         <trigger>
@@ -50,10 +50,10 @@
                             <manual_close>YES</manual_close>
                         </trigger>
                         <trigger>
-                            <expression>{last()}=2</expression>
+                            <expression>{last()}=3</expression>
                             <name>System reboot is required: pending kernel upgrade</name>
                             <priority>INFO</priority>
-                            <description>Needrestart detected that system reboot is required to load a new kernel. There is an ABI compatible kernel upgrade pending.</description>
+                            <description>Needrestart detected that a kernel upgrade is pending. System reboot is required to load a new kernel.</description>
                             <manual_close>YES</manual_close>
                         </trigger>
                     </triggers>
